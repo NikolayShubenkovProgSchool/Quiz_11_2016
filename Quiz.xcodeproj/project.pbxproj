@@ -19,6 +19,7 @@
 		4F3747E11DF2CA1900489237 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3747E01DF2CA1900489237 /* Quiz.swift */; };
 		4F3747E41DF2D13100489237 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3747E31DF2D13100489237 /* QuizViewController.swift */; };
 		4F6B3B5E1DF30005003402AD /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6B3B5D1DF30005003402AD /* ResultViewController.swift */; };
+		4F6B3B601DF309F1003402AD /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6B3B5F1DF309F1003402AD /* UIViewController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		4F3747E01DF2CA1900489237 /* Quiz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		4F3747E31DF2D13100489237 /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		4F6B3B5D1DF30005003402AD /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		4F6B3B5F1DF309F1003402AD /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				4F3747E31DF2D13100489237 /* QuizViewController.swift */,
+				4F6B3B5F1DF309F1003402AD /* UIViewController+Extensions.swift */,
 				4F00CDA01DF2B17C00AB65F9 /* MyFirstTableViewController.swift */,
 			);
 			name = ViewControllers;
@@ -187,6 +190,7 @@
 				4F3747E11DF2CA1900489237 /* Quiz.swift in Sources */,
 				4F6B3B5E1DF30005003402AD /* ResultViewController.swift in Sources */,
 				4F3747DF1DF2C4A300489237 /* Question.swift in Sources */,
+				4F6B3B601DF309F1003402AD /* UIViewController+Extensions.swift in Sources */,
 				4F3747E41DF2D13100489237 /* QuizViewController.swift in Sources */,
 				4F00CD8A1DF2A74800AB65F9 /* AppDelegate.swift in Sources */,
 				4F3747DD1DF2C45900489237 /* DataLoader.swift in Sources */,

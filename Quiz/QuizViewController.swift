@@ -17,6 +17,7 @@ class QuizViewController: UIViewController {
     var quiz:Quiz! {
         didSet {
             print("New Quize:\(quiz)")
+            title = quiz.name
             score = 0
             questionIndex = 0
             currentQuestion = quiz.questions.first
@@ -25,7 +26,7 @@ class QuizViewController: UIViewController {
     
     fileprivate var currentQuestion:Question? {
         didSet {
-            updateUI(animated: true)
+            updateUI(animated: isOnScreen)
         }
     }
     
@@ -71,7 +72,6 @@ class QuizViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print(#function)
-        updateUI(animated: true)
     }
     
     //6) вызывается перед тем, как будет произведено исчезновение
@@ -102,7 +102,6 @@ class QuizViewController: UIViewController {
             let result = sender as? Double {
             vc.result = Int(result)
         }
-        
     }
     
     
@@ -138,15 +137,39 @@ class QuizViewController: UIViewController {
         tableView?.delegate = self
         //чтобы отобразить ячейки
         tableView?.dataSource = self
+        imageView.contentMode = .scaleAspectFit
     }
     
     //MARK: - Update UI
     
     func updateUI(animated:Bool)
     {
-        imageView.image = currentQuestion?.image
-        questionText.text = currentQuestion?.text
-        tableView.reloadData()
+        let duration = animated ? 0.2 : 0
+        
+        let sectionsToAnimate = IndexSet(integer:0)
+        
+        tableView.reloadSections(sectionsToAnimate,
+                                 with: animated ? .left : .none)
+
+        
+        UIView.animate(withDuration: duration,
+                       animations: {
+                    
+                        self.imageView.alpha = 0
+                        self.questionText.alpha = 0
+                        
+        }, completion: { _ in
+            
+            //по завершении первой анимации будет выполнена вторая
+            
+            self.imageView.image = self.currentQuestion?.image
+            self.questionText.text = self.currentQuestion?.text
+            
+            UIView.animate(withDuration: duration, animations: { 
+                self.imageView.alpha = 1
+                self.questionText.alpha = 1
+            })
+        })
     }
 }
 
