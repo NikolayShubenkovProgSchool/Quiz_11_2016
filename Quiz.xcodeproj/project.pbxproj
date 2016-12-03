@@ -17,6 +17,7 @@
 		4F3747DD1DF2C45900489237 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3747DC1DF2C45900489237 /* DataLoader.swift */; };
 		4F3747DF1DF2C4A300489237 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3747DE1DF2C4A300489237 /* Question.swift */; };
 		4F3747E11DF2CA1900489237 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3747E01DF2CA1900489237 /* Quiz.swift */; };
+		4F3747E41DF2D13100489237 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3747E31DF2D13100489237 /* QuizViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		4F3747DC1DF2C45900489237 /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		4F3747DE1DF2C4A300489237 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		4F3747E01DF2CA1900489237 /* Quiz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
+		4F3747E31DF2D13100489237 /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				4F00CD891DF2A74800AB65F9 /* AppDelegate.swift */,
-				4F00CDA01DF2B17C00AB65F9 /* MyFirstTableViewController.swift */,
+				4F3747E51DF2D14E00489237 /* ViewControllers */,
 				4F3747E21DF2CA3700489237 /* Models */,
 				4F00CD9F1DF2AA3A00AB65F9 /* Supporting Files */,
 				4F00CD8D1DF2A74800AB65F9 /* Main.storyboard */,
@@ -93,6 +95,15 @@
 				4F3747DE1DF2C4A300489237 /* Question.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		4F3747E51DF2D14E00489237 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4F3747E31DF2D13100489237 /* QuizViewController.swift */,
+				4F00CDA01DF2B17C00AB65F9 /* MyFirstTableViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +183,7 @@
 				4F00CDA11DF2B17C00AB65F9 /* MyFirstTableViewController.swift in Sources */,
 				4F3747E11DF2CA1900489237 /* Quiz.swift in Sources */,
 				4F3747DF1DF2C4A300489237 /* Question.swift in Sources */,
+				4F3747E41DF2D13100489237 /* QuizViewController.swift in Sources */,
 				4F00CD8A1DF2A74800AB65F9 /* AppDelegate.swift in Sources */,
 				4F3747DD1DF2C45900489237 /* DataLoader.swift in Sources */,
 			);
