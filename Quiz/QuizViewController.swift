@@ -10,9 +10,20 @@ import UIKit
 
 class QuizViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var questionText: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    
     var quiz:Quiz! {
         didSet {
             print("New Quize:\(quiz)")
+            currentQuestion = quiz.questions.first
+        }
+    }
+    
+    fileprivate var currentQuestion:Question? {
+        didSet {
+            updateUI(animated: true)
         }
     }
     
@@ -55,6 +66,7 @@ class QuizViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print(#function)
+        updateUI(animated: true)
     }
     
     //6) вызывается перед тем, как будет произведено исчезновение
@@ -85,9 +97,11 @@ class QuizViewController: UIViewController {
     }
     
     //MARK: - Setup
+    
     func setup()
     {
         setupModel()
+        setupViews()
     }
     
     func setupModel()
@@ -102,5 +116,57 @@ class QuizViewController: UIViewController {
         quiz = loader.loadQuizWith(name: "cinema")!
     }
     
+    func setupViews()
+    {
+        //чтобы обработать события на tableView
+        tableView?.delegate = self
+        //чтобы отобразить ячейки
+        tableView?.dataSource = self
+    }
+    
+    //MARK: - Update UI
+    
+    func updateUI(animated:Bool)
+    {
+        imageView.image = currentQuestion?.image
+        questionText.text = currentQuestion?.text
+        tableView.reloadData()
+    }
 }
 
+extension QuizViewController : UITableViewDataSource
+{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        guard let q = currentQuestion else {
+            return 0
+        }
+        return q.answers.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let answer = answerAt(index: indexPath)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "quiestionCellID", for: indexPath)
+        
+        cell.textLabel?.text = answer
+        cell.detailTextLabel?.text = "\(indexPath.row + 1)"
+        
+        return cell
+    }
+    
+    fileprivate func answerAt(index:IndexPath)->String
+    {
+        if let q = currentQuestion {
+            return q.answers[index.row]
+        }
+        return ""
+    }
+    
+}
+
+extension QuizViewController : UITableViewDelegate
+{
+    
+}
