@@ -17,6 +17,8 @@ class QuizViewController: UIViewController {
     var quiz:Quiz! {
         didSet {
             print("New Quize:\(quiz)")
+            score = 0
+            questionIndex = 0
             currentQuestion = quiz.questions.first
         }
     }
@@ -26,6 +28,9 @@ class QuizViewController: UIViewController {
             updateUI(animated: true)
         }
     }
+    
+    fileprivate var score = 0
+    fileprivate var questionIndex = 0
     
     //1) Когда вьюконтроллер только создан,  унего не загружены никакие компоненты интерфейста.
     
@@ -168,5 +173,22 @@ extension QuizViewController : UITableViewDataSource
 
 extension QuizViewController : UITableViewDelegate
 {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        let selectedAnswer = answerAt(index: indexPath)
+        if selectedAnswer == currentQuestion!.correctAnswer {
+            score += 1
+        }
+        showNextQuestionIfNeeded()
+    }
     
+    func showNextQuestionIfNeeded()
+    {
+        questionIndex += 1
+        guard questionIndex < quiz.questions.count else {
+            print("показать результат")
+            return
+        }
+        currentQuestion = quiz.questions[questionIndex]
+    }
 }
