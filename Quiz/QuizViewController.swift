@@ -96,6 +96,17 @@ class QuizViewController: UIViewController {
         print(#function)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let vc = segue.destination as? ResultViewController,
+            let result = sender as? Double {
+            vc.result = Int(result)
+        }
+        
+    }
+    
+    
+    
     //вызывается перед уничтожением вашего контроллера
     deinit {
         print(#function)
@@ -187,6 +198,11 @@ extension QuizViewController : UITableViewDelegate
         questionIndex += 1
         guard questionIndex < quiz.questions.count else {
             print("показать результат")
+            
+            //посчитаем относительный результат
+            let result = Double(score) / Double(quiz.questions.count)
+            
+            performSegue(withIdentifier: "Show Result", sender: result * 100)
             return
         }
         currentQuestion = quiz.questions[questionIndex]
