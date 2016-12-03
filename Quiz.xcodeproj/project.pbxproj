@@ -14,6 +14,8 @@
 		4F00CD9D1DF2AA1100AB65F9 /* animals.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F00CD9B1DF2AA1100AB65F9 /* animals.json */; };
 		4F00CD9E1DF2AA1100AB65F9 /* cinema.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F00CD9C1DF2AA1100AB65F9 /* cinema.json */; };
 		4F00CDA11DF2B17C00AB65F9 /* MyFirstTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F00CDA01DF2B17C00AB65F9 /* MyFirstTableViewController.swift */; };
+		4F3747DD1DF2C45900489237 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3747DC1DF2C45900489237 /* DataLoader.swift */; };
+		4F3747DF1DF2C4A300489237 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3747DE1DF2C4A300489237 /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		4F00CD9B1DF2AA1100AB65F9 /* animals.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animals.json; sourceTree = "<group>"; };
 		4F00CD9C1DF2AA1100AB65F9 /* cinema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cinema.json; sourceTree = "<group>"; };
 		4F00CDA01DF2B17C00AB65F9 /* MyFirstTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFirstTableViewController.swift; sourceTree = "<group>"; };
+		4F3747DC1DF2C45900489237 /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		4F3747DE1DF2C4A300489237 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 			children = (
 				4F00CD891DF2A74800AB65F9 /* AppDelegate.swift */,
 				4F00CDA01DF2B17C00AB65F9 /* MyFirstTableViewController.swift */,
+				4F3747DC1DF2C45900489237 /* DataLoader.swift */,
+				4F3747DE1DF2C4A300489237 /* Question.swift */,
 				4F00CD9F1DF2AA3A00AB65F9 /* Supporting Files */,
 				4F00CD8D1DF2A74800AB65F9 /* Main.storyboard */,
 				4F00CD901DF2A74800AB65F9 /* Assets.xcassets */,
@@ -153,7 +159,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F00CDA11DF2B17C00AB65F9 /* MyFirstTableViewController.swift in Sources */,
+				4F3747DF1DF2C4A300489237 /* Question.swift in Sources */,
 				4F00CD8A1DF2A74800AB65F9 /* AppDelegate.swift in Sources */,
+				4F3747DD1DF2C45900489237 /* DataLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +323,7 @@
 				4F00CD9A1DF2A74800AB65F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
